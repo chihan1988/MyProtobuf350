@@ -64,6 +64,7 @@
 		D44C620E132DFF430009C878 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620D132DFF430009C878 /* AVFoundation.framework */; };
 		D44C6210132DFF4E0009C878 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D44C620F132DFF4E0009C878 /* AudioToolbox.framework */; };
 		D6B0611B1803AB670077942B /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6B0611A1803AB670077942B /* CoreMotion.framework */; };
+		F4C9B6E6207221E600240F6A /* ClientInfo.pb.cc in Sources */ = {isa = PBXBuildFile; fileRef = F4C9B6E5207221E600240F6A /* ClientInfo.pb.cc */; };
 		F4D5AC79206C8320002C78E7 /* api.pb.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4D5AC77206C8320002C78E7 /* api.pb.cpp */; };
 		F4D5B166206C83C0002C78E7 /* wire_format.cc in Sources */ = {isa = PBXBuildFile; fileRef = F4D5B0F8206C83B8002C78E7 /* wire_format.cc */; };
 		F4D5B16B206C83C0002C78E7 /* dynamic_message.cc in Sources */ = {isa = PBXBuildFile; fileRef = F4D5B0FF206C83B8002C78E7 /* dynamic_message.cc */; };
@@ -203,6 +204,8 @@
 		D44C620D132DFF430009C878 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D44C620F132DFF4E0009C878 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		D6B0611A1803AB670077942B /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		F4C9B6E4207221E600240F6A /* ClientInfo.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientInfo.pb.h; sourceTree = "<group>"; };
+		F4C9B6E5207221E600240F6A /* ClientInfo.pb.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ClientInfo.pb.cc; sourceTree = "<group>"; };
 		F4D5AC77206C8320002C78E7 /* api.pb.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = api.pb.cpp; sourceTree = "<group>"; };
 		F4D5AC78206C8320002C78E7 /* api.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = api.pb.h; sourceTree = "<group>"; };
 		F4D5B0F8206C83B8002C78E7 /* wire_format.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = wire_format.cc; path = src/google/protobuf/wire_format.cc; sourceTree = "<group>"; };
@@ -542,6 +545,8 @@
 		F4D5AC76206C8320002C78E7 /* pb */ = {
 			isa = PBXGroup;
 			children = (
+				F4C9B6E5207221E600240F6A /* ClientInfo.pb.cc */,
+				F4C9B6E4207221E600240F6A /* ClientInfo.pb.h */,
 				F4D5AC77206C8320002C78E7 /* api.pb.cpp */,
 				F4D5AC78206C8320002C78E7 /* api.pb.h */,
 			);
@@ -1036,6 +1041,7 @@
 				F4D5B23E206C841B002C78E7 /* common.cc in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				F4D5B363206C8AB6002C78E7 /* arena.cc in Sources */,
+				F4C9B6E6207221E600240F6A /* ClientInfo.pb.cc in Sources */,
 				F4D5B361206C8AA3002C78E7 /* any.cc in Sources */,
 				F4D5B249206C841B002C78E7 /* once.cc in Sources */,
 				F4D5B37A206C8C1B002C78E7 /* io_win32.cc in Sources */,
@@ -1089,7 +1095,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COMPRESS_PNG_FILES = YES;
+				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = N8HXZ82D8M;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
@@ -1120,6 +1126,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dt.test001;
 				SDKROOT = iphoneos;
+				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
 				VALID_ARCHS = "arm64 armv7";
@@ -1133,7 +1140,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				COMPRESS_PNG_FILES = YES;
+				COMPRESS_PNG_FILES = NO;
 				DEVELOPMENT_TEAM = N8HXZ82D8M;
 				ENABLE_BITCODE = NO;
 				GCC_C_LANGUAGE_STANDARD = "compiler-default";
@@ -1162,6 +1169,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dt.test001;
 				SDKROOT = iphoneos;
+				STRIP_PNG_TEXT = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				USER_HEADER_SEARCH_PATHS = "$(_COCOS_HEADER_IOS_BEGIN) $(_COCOS_HEADER_IOS_END)";
 				VALID_ARCHS = "arm64 armv7";
